@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Manage Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
     <style>
@@ -33,7 +35,7 @@
             background-color: #ddd;
         }
     
-        a.btn {
+        .btn-add {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
@@ -47,13 +49,13 @@
             transition: background-color 0.3s ease;
         }
     
-        a.btn:hover {
+        .btn-add:hover {
             background-color: #0056b3;
         }
     </style>
     
     <body>
-        <a href="/adduser" class="btn">Add New User</a>
+        <a href="/adduser" class="btn-add">Add New User</a>
     
         <table>
             <thead>
@@ -75,9 +77,9 @@
                         <td>{{ $user->gender }}</td>
                         <td>{{ $user->address }}</td>
                         <td><img src="{{ $user->photo }}" alt="" style="width: 50px"></td>
-                        <td><a href="edit/{{ $user->id }}">Edit</a></td>
-                        <td><a href="delete/{{ $user->id }}">Delete</a></td>
-    
+                        <td><a href="edit/{{ $user->id }}" class="btn btn-warning">Edit</a></td>
+                        <td><a href="delete/{{ $user->id }}" class="btn btn-danger">Delete</a></td>
+                       
                     </tr>
                 @endforeach
             </tbody>
